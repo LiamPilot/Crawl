@@ -1,5 +1,6 @@
 package com.example.stuart.crawl;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -70,5 +71,7 @@ public class CrawlsActivity extends AppCompatActivity {
     crawlsList.addFirst("The Cock and Bollocks");
     crawlCardList.addFirst(new CrawlCardObject("Shoot me :)"));
     crawlsAdapter.notifyDataSetChanged();
+    Intent intent = new Intent(CrawlsActivity.this, NewCrawlActivity.class);
+    startActivity(intent);
   }
 }
