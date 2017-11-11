@@ -27,7 +27,7 @@ public class CrawlsCardAdapter extends RecyclerView.Adapter<CrawlsCardAdapter.Vi
   public CrawlsCardAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     //create a new view
     TextView v = (TextView) LayoutInflater.from(parent.getContext())
-        .inflate(R.layout.crawls_card_view, parent, false);
+        .inflate(R.layout.crawls_text_view, parent, false);
     //TODO: set view's parameters
     ViewHolder vh = new ViewHolder(v);
     return vh;
