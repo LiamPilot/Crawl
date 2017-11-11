@@ -23,6 +23,7 @@ public class CrawlsActivity extends AppCompatActivity {
   private RecyclerView.LayoutManager crawlsLayoutManager;
 
   private LinkedList<String> crawlsList;
+  private LinkedList<CrawlCardObject> crawlCardList;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class CrawlsActivity extends AppCompatActivity {
     setSupportActionBar(toolbar);
 
     crawlsList = new LinkedList<>();
+    crawlCardList = new LinkedList<>();
 
     crawlsRecyclerView = (RecyclerView) findViewById(R.id.crawls_recycler_view);
     crawlsRecyclerView.setHasFixedSize(true);
@@ -39,7 +41,7 @@ public class CrawlsActivity extends AppCompatActivity {
     crawlsLayoutManager = new LinearLayoutManager(this);
     crawlsRecyclerView.setLayoutManager(crawlsLayoutManager);
 
-    crawlsAdapter = new CrawlsCardAdapter(crawlsList);
+    crawlsAdapter = new CrawlsCardViewAdapter(crawlCardList);
     crawlsRecyclerView.setAdapter(crawlsAdapter);
   }
 
@@ -67,6 +69,7 @@ public class CrawlsActivity extends AppCompatActivity {
 
   public void onNewCrawlBtnClick(View view) {
     crawlsList.addFirst("The Cock and Bollocks");
+    crawlCardList.addFirst(new CrawlCardObject("Shoot me :)"));
     crawlsAdapter.notifyDataSetChanged();
     Intent intent = new Intent(CrawlsActivity.this, NewCrawlActivity.class);
     startActivity(intent);
