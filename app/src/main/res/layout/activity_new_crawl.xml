@@ -75,7 +75,9 @@
             android:text="Start Crawl"
             android:textColor="@color/colorLight"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="134dp"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

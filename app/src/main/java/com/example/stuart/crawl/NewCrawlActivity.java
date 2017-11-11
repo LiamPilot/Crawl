@@ -1,5 +1,6 @@
 package com.example.stuart.crawl;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +28,14 @@ public class NewCrawlActivity extends AppCompatActivity {
         {
           public void onClick(View view)
           {
-            Log.v("sfgarg", startInput.getText().toString());
+            String[] startLatLng = startInput.getText().toString().split(",");
+            LatLng start = new LatLng(Double.parseDouble(startLatLng[0]), Double.parseDouble(startLatLng[1]));
+            String[] endLatLng = endInput.getText().toString().split(",");
+            LatLng end = new LatLng(Double.parseDouble(endLatLng[0]), Double.parseDouble(endLatLng[1]));
+            Intent intent = new Intent(NewCrawlActivity.this, NavigatorActivity.class);
+            intent.putExtra("Start", startInput.getText().toString());
+            intent.putExtra("End", endInput.getText().toString());
+            startActivity(intent);
           }
         });
   }
